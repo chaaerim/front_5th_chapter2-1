@@ -34,7 +34,7 @@ const handleQuantityChange = (productId: string, change: number) => {
 
   const newTotal = updatedCartList.reduce((acc: number, item) => acc + item.price * (item.count || 1), 0);
 
-  globalStore.setState({ productList: updatedProductList, cartList: updatedCartList, total: newTotal });
+  globalStore.setState({ productList: updatedProductList, cartList: updatedCartList, totalPrice: newTotal });
 };
 
 const handleRemoveItem = (productId: string) => {
@@ -60,7 +60,7 @@ const handleRemoveItem = (productId: string) => {
     item.id === productId ? { ...item, count: item.count + removedCartItem.count } : item,
   );
 
-  globalStore.setState({ cartList: updatedCartList, productList: updatedProductList, total: newTotal });
+  globalStore.setState({ cartList: updatedCartList, productList: updatedProductList, totalPrice: newTotal });
 };
 
 addEvent("click", ".quantity-change", (e) => {

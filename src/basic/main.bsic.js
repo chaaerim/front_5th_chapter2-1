@@ -5,6 +5,7 @@ import { TotalPrice } from "./components/cart/TotalPrice";
 import { Header } from "./components/common/Header";
 import { globalStore } from "./store/globalStore";
 import { registerGlobalEvents } from "./utils/eventUtils";
+
 function main() {
   const root = document.getElementById("app");
 

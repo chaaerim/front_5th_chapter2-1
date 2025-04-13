@@ -11,7 +11,7 @@ interface Product {
 
 export const ProductSelector = () => {
   const productList = globalStore.getState().productList;
-  console.log(productList);
+  console.log(globalStore.getState());
 
   return `
   <select id="product-select" class="border rounded p-2 mr-2">
@@ -63,7 +63,7 @@ const addProduct = () => {
   globalStore.setState({
     productList: updatedProductList,
     cartList: updatedCartList,
-    total: newTotal,
+    totalPrice: newTotal,
   });
 };
 
