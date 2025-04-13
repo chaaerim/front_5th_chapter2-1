@@ -1,5 +1,6 @@
 import { CartList } from "./components/cart/CartList";
 import { ProductSelector } from "./components/cart/ProductSelector";
+import { SoldOutList } from "./components/cart/SoldOutList";
 import { TotalPrice } from "./components/cart/TotalPrice";
 import { Header } from "./components/common/Header";
 import { globalStore } from "./store/globalStore";
@@ -14,6 +15,7 @@ function main() {
             ${CartList()}
             ${TotalPrice()}
             ${ProductSelector()}
+            ${SoldOutList()}
         </div>
     </div>
     `;
