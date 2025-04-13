@@ -14,12 +14,12 @@ function main() {
   stockInfo = document.createElement("div");
   // cartDisp.id = "cart-items";
   // sel.id = "product-select";
-  addBtn.id = "add-to-cart";
+  // addBtn.id = "add-to-cart";
   stockInfo.id = "stock-status";
   cont.className = "bg-gray-100 p-8";
   wrap.className = "max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl p-8";
   // sel.className = "border rounded p-2 mr-2";
-  addBtn.className = "bg-blue-500 text-white px-4 py-2 rounded";
+  // addBtn.className = "bg-blue-500 text-white px-4 py-2 rounded";
   stockInfo.className = "text-sm text-gray-500 mt-2";
   addBtn.textContent = "추가";
   updateSelOpts();

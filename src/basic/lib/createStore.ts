@@ -1,6 +1,6 @@
 import { createObserver } from "./createObserver";
 
-export const createStore = (initialStore) => {
+export const createStore = <T>(initialStore: T) => {
   const { subscribe, notify } = createObserver();
 
   let state = { ...initialStore };
