@@ -11,6 +11,7 @@ interface Product {
 
 export const ProductSelector = () => {
   const productList = globalStore.getState().productList;
+  console.log(productList);
 
   return `
   <select id="product-select" class="border rounded p-2 mr-2">
