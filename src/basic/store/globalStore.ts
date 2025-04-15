@@ -18,7 +18,7 @@ export interface GlobalState {
   productList: Product[];
   cartList: CartItem[];
   totalPrice: number;
-  bonusPts: number;
+  totalDiscountRate: number;
 }
 
 export const globalStore = createStore<GlobalState>({
@@ -31,5 +31,5 @@ export const globalStore = createStore<GlobalState>({
   ],
   cartList: [],
   totalPrice: 0,
-  bonusPts: 0,
+  totalDiscountRate: 0,
 });

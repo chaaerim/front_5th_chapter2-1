@@ -64,9 +64,14 @@ describe("basic test", () => {
     });
 
     it("상품을 장바구니에 추가할 수 있는지 확인", () => {
+      console.log("cartDisp", cartDisp);
+      // console.log(addBtn.click());
       sel.value = "p1";
       addBtn.click();
+
       expect(cartDisp.children.length).toBe(1);
+      console.log("cartDisp", cartDisp.children.length);
+      console.log("cartDisp.children", cartDisp.children);
       expect(cartDisp.children[0].querySelector("span").textContent).toContain("상품1 - 10000원 x 1");
     });
 

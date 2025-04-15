@@ -15,13 +15,14 @@ export const ProductSelector = () => {
 
   return `
   <select id="product-select" class="border rounded p-2 mr-2">
-  ${productList.map((product) => `<option value="${product.id}" ${product.count <= 0 ? "disabled = true" : ""}}>${product.name} - ${product.price}원</option>`).join("")}
+  ${productList.map((product) => `<option value="${product.id}" ${product.count <= 0 ? "disabled = true" : ""}>${product.name} - ${product.price}원</option>`).join("")}
   </select>
   <button id="add-to-cart" class="bg-blue-500 text-white px-4 py-2 rounded">추가</button>
   `;
 };
 
 const addProduct = () => {
+  console.log("addProduct!!!!!");
   const selectedProduct = document.getElementById("product-select") as HTMLSelectElement;
   const selectedProductId = selectedProduct?.value;
 
@@ -32,7 +33,7 @@ const addProduct = () => {
 
   // 재고가 없으면 중단
   if (product.count <= 0) {
-    console.log("재고 부족");
+    alert("재고가 부족합니다.");
     return;
   }
 
@@ -56,6 +57,10 @@ const addProduct = () => {
     updatedCartList = [...state.cartList, { ...updatedProduct, count: 1 }];
   }
 
+  // const discountRate = calculateDiscountRate(updatedCartList);
+  // console.log("discountRate", discountRate);
+
+  console.log(globalStore.getState().totalDiscountRate);
   // 6. 카트에 있는 모든 상품의 가격 합계를 계산
   const newTotal = updatedCartList.reduce((acc: number, item: CartItem) => acc + item.price * (item.count || 1), 0);
 
@@ -64,7 +69,10 @@ const addProduct = () => {
     productList: updatedProductList,
     cartList: updatedCartList,
     totalPrice: newTotal,
+    // totalDiscountRate: discountRate,
   });
+
+  console.log("cart-items", document.getElementById("cart-items")?.children.length);
 };
 
 addEvent("click", "#add-to-cart", addProduct);
